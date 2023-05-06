@@ -1,3 +1,3 @@
-public sealed class RefactoredObstacleHard : RefactoredObstacle
+public sealed class RefactoredObstacleHard : RefactoredObstacle<PoolableGameObject>
 {
 }

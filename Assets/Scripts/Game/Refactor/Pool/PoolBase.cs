@@ -1,8 +1,16 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class PoolBase : MonoBehaviour, IPool
+public abstract class PoolBase<T> : MonoBehaviour, IPool
+    where T : IPoolable
 {
+
+    private static PoolBase<T> instance;
+
+    public static PoolBase<T> Instance { get => instance; protected set => instance = value; }
+
+
     [SerializeField]
     private int count = 0;
 

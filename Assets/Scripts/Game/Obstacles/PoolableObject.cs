@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PoolableObject<T> : MonoBehaviour
-    where T : IPoolable
+public class PoolableObject : MonoBehaviour, IPoolable
+    
 
 {
-    private static PoolableObject<T> instance;
+    public void Free()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void New()
+    {
+        throw new System.NotImplementedException();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,4 +28,6 @@ public class PoolableObject<T> : MonoBehaviour
     {
         
     }
+
+    //public override 
 }

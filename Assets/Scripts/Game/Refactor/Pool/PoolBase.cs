@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class PoolBase<T> : MonoBehaviour, IPool
+public abstract class PoolBase<T> : MonoBehaviour, IPool //se editó
     where T : IPoolable
 {
 

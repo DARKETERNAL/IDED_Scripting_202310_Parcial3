@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class lowObstaclePool : PoolBase<lowObstaclePool>, IPoolable
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
         PopulatePool();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
 

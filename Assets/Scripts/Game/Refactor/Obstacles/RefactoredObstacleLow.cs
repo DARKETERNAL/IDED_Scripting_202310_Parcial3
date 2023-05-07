@@ -1,3 +1,3 @@
-public sealed class RefactoredObstacleLow : RefactoredObstacle 
+public sealed class RefactoredObstacleLow : RefactoredObstacle
 {
-}
+}   

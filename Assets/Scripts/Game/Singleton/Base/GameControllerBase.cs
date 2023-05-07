@@ -14,10 +14,11 @@ public abstract class GameControllerBase : MonoBehaviour
 
     protected abstract void OnScoreChanged(int scoreAdd);
 
-    protected void OnObstacleDestroyed(int hp)
+    protected  void OnObstacleDestroyed(int hp)
     {
         OnScoreChanged(hp);
     }
+    
 
     protected virtual void SetGameOver()
     {

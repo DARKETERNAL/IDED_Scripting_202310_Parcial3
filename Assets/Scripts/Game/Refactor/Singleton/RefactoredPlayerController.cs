@@ -12,7 +12,7 @@ public class RefactoredPlayerController : PlayerControllerBase
     protected override void Shoot()
     {
         Instantiate(selectedBullet, spawnPos.position, spawnPos.rotation)
-                          .AddForce(transform.forward * shootForce, ForceMode.Force);
+                            .AddForce(transform.forward * shootForce, ForceMode.Force);
     }
     private void Awake()
     {
@@ -38,4 +38,5 @@ public class RefactoredPlayerController : PlayerControllerBase
         selectedBullet = bulletPrefabs[GameUtils.GetClampedValue(index, bulletPrefabs.Length)];
         uiManager.SendMessage("EnableIcon", index);
     }
+
 }

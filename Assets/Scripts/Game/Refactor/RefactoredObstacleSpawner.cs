@@ -3,19 +3,24 @@ using UnityEngine;
 public class RefactoredObstacleSpawner : ObstacleSpawnerBase
 {
     [SerializeField]
-    private PoolBase obstacleLowPool;
+    private PoolBase<PoolableObject> obstacleLowPool;
 
     [SerializeField]
-    private PoolBase obstacleMidPool;
+    private PoolBase<PoolableObject> obstacleMidPool;
 
     [SerializeField]
-    private PoolBase obstacleHardPool;
+    private PoolBase<PoolableObject> obstacleHardPool;
 
     [SerializeField]
     private GameObject[] obstaclePrefabs;
     private static RefactoredObstacleSpawner instance;
+    private PoolBase<lowObstaclePool> obstaclePool;
 
     public static RefactoredObstacleSpawner Instance => instance;
+    void Start()
+    {
+        obstaclePool = gameObject.AddComponent<lowObstaclePool>(); // crea el pool de objetos
+    }
 
     protected override void SpawnObject()
     {

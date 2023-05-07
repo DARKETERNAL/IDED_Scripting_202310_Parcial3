@@ -19,17 +19,15 @@ public abstract class PoolBase<T> : MonoBehaviour, IPool //se editó
 
     private List<GameObject> instances = new List<GameObject>();
 
-    public void RecycleInstance(GameObject instance)
-    {
-        throw new System.NotImplementedException();
-    }
+    public abstract void RecycleInstance(GameObject instance);
+    
 
     public GameObject RetrieveInstance()
     {
         throw new System.NotImplementedException();
     }
 
-    private void PopulatePool()
+    public void PopulatePool()
     {
         for (int i = 0; i < count; i++)
         {

@@ -15,13 +15,13 @@ public class midObstaclePool :  PoolBase<midObstaclePool>, IPoolable
         throw new System.NotImplementedException();
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         PopulatePool();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
 

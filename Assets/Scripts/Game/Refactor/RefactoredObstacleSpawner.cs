@@ -19,7 +19,7 @@ public class RefactoredObstacleSpawner : ObstacleSpawnerBase
     public static RefactoredObstacleSpawner Instance => instance;
     void Start()
     {
-        obstaclePool = gameObject.AddComponent<lowObstaclePool>(); // crea el pool de objetos
+        obstaclePool = gameObject.AddComponent<lowObstaclePool>(); 
     }
 
     protected override void SpawnObject()

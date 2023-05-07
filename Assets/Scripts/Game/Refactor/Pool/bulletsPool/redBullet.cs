@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class redBullet : PoolBase<hardObstaclePool>, IPoolable
+public class redBullet : PoolBase<redBullet>, IPoolable
 {
     public void Free()
     {
@@ -15,13 +15,13 @@ public class redBullet : PoolBase<hardObstaclePool>, IPoolable
         throw new System.NotImplementedException();
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         

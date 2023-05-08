@@ -25,6 +25,10 @@ public class RefactoredPlayerController : PlayerControllerBase
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    public void OnScoreChangedEvent(int scoreAdd)
+    {
+        UpdateScore(scoreAdd);
+    }
     private void OnDestroy()
     {
         if (Instance == this)

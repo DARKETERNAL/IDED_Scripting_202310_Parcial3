@@ -7,10 +7,11 @@ public sealed class RefactoredGameController : GameControllerBase
 
     protected override ObstacleSpawnerBase Spawner => throw new System.NotImplementedException();
 
-    protected override void OnScoreChanged(int scoreAdd)
+    protected override void OnScoreChanged(int hp)
     {
-        PlayerController?.SendMessage("UpdateScore", scoreAdd);
+       
         UiManager?.SendMessage("UpdateScoreLabel");
+        PlayerController?.SendMessage("UpdateScore", hp);
     }
     private static GameController instance;
 
@@ -46,9 +47,12 @@ public sealed class RefactoredGameController : GameControllerBase
         PlayerController?.SendMessage("OnGameOver");
         Spawner?.SendMessage("OnGameOver");
         base.SetGameOver();
+
     }
 
-    // Constructor privado para prevenir la creación de instancias externas
+        
+
+    
     private void GameController()
     {
 

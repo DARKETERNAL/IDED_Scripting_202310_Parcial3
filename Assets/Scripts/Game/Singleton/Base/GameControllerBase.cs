@@ -16,7 +16,7 @@ public abstract class GameControllerBase : MonoBehaviour
 
     protected  void OnObstacleDestroyed(int hp)
     {
-        OnScoreChanged(hp);
+        OnScoreChanged( hp);
     }
     
 

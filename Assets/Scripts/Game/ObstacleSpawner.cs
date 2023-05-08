@@ -22,7 +22,7 @@ public sealed class ObstacleSpawner : ObstacleSpawnerBase
         }
     }
 
-    protected override void SpawnObject()
+    protected override void SpawnObject(PoolableObject target)
     {
         Instantiate(
             ObstaclePrefabs[ObjectIndex],                // Retrieves the prefab to instantiate

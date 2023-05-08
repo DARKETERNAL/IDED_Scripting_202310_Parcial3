@@ -7,27 +7,21 @@ public class PoolableObject : MonoBehaviour, IPoolable
     
 
 {
-    public void Free()
+
+    public void PrepareForRecycle(Transform parent)
     {
         throw new System.NotImplementedException();
     }
 
-    public void New()
+    public void PrepareForRetrieve()
     {
         throw new System.NotImplementedException();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public void onDestroy(PoolableObject target, instanceCreator instanceCreator) {
+        instanceCreator.SendMessage("SpawnObject", target);
+    
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //public override 
 }

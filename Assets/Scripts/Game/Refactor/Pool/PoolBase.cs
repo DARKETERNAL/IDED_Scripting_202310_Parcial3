@@ -33,5 +33,7 @@ public abstract class PoolBase<T> : MonoBehaviour, IPool //se editó
         {
             instances.Add(Instantiate(basePrefab, transform.position, Quaternion.identity));
         }
+
+
     }
 }

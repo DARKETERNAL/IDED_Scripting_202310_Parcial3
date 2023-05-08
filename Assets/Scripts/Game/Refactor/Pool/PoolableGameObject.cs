@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PoolableObject : MonoBehaviour, IPoolable
-    
-
+public class PoolableGameObject : MonoBehaviour, IPool
 {
 
-    public void PrepareForRecycle(Transform parent)
+    public void RecycleInstance(GameObject instance)
     {
         throw new System.NotImplementedException();
     }
 
-    public void PrepareForRetrieve()
+    public GameObject RetrieveInstance()
     {
         throw new System.NotImplementedException();
     }
-
 }

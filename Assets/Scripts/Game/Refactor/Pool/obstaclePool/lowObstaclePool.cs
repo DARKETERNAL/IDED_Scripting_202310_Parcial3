@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class lowObstaclePool : PoolBase<lowObstaclePool>, IPoolable
+public class lowObstaclePool : PoolBase<PoolableObject>, IPoolable
 {
-    
     void Start()
     {
         PopulatePool();
@@ -16,6 +15,7 @@ public class lowObstaclePool : PoolBase<lowObstaclePool>, IPoolable
     {
 
     }
+
 
 
 
@@ -45,12 +45,13 @@ public class lowObstaclePool : PoolBase<lowObstaclePool>, IPoolable
 
     public void OnDestroy() { }
 
-    public void New()
+
+    public void PrepareForRetrieve()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Free()
+    public void PrepareForRecycle(Transform parent)
     {
         throw new System.NotImplementedException();
     }

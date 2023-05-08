@@ -1,16 +1,16 @@
 using UnityEngine;
 public class RefactoredUIManager : UIManagerBase
 {
-    protected override PlayerControllerBase PlayerController => throw new System.NotImplementedException();
+    protected override PlayerControllerBase PlayerController => playerController;
 
-    protected override GameControllerBase GameController => throw new System.NotImplementedException();
+    protected override GameControllerBase GameController => gameController;
 
     private static RefactoredUIManager instance;
 
     public static RefactoredUIManager Instance => instance ??= FindObjectOfType<RefactoredUIManager>();
 
     [SerializeField]
-    private PlayerController playerController;
+    private PlayerControllerBase playerController;
 
     [SerializeField]
     private GameControllerBase gameController;

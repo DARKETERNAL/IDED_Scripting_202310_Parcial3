@@ -1,9 +1,9 @@
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class RefactoredObstacleSpawner : ObstacleSpawnerBase
 {
-    [SerializeField]
-    private PoolBase<PoolableObject> obstacleLowPool;
+
 
     [SerializeField]
     private PoolBase<PoolableObject> obstacleMidPool;
@@ -11,21 +11,39 @@ public class RefactoredObstacleSpawner : ObstacleSpawnerBase
     [SerializeField]
     private PoolBase<PoolableObject> obstacleHardPool;
 
+
+
     [SerializeField]
-    private GameObject[] obstaclePrefabs;
+    private PoolBase<PoolableObject> obstacleLowPool; //poolable objects
+
+
+
+
+    [SerializeField]
+    private GameObject[] obstaclePrefabs ;
     private static RefactoredObstacleSpawner instance;
-    private PoolBase<lowObstaclePool> obstaclePool;
+
+    private PoolBase<PoolableObject> obstaclePool; //obstacle pool
 
     public static RefactoredObstacleSpawner Instance => instance;
     void Start()
     {
-        obstaclePool = gameObject.AddComponent<lowObstaclePool>(); 
+        //obstaclePool = gameObject.AddComponent<obstacleLowPool>(); 
     }
 
     protected override void SpawnObject()
     {
-        throw new System.NotImplementedException();
+        Instantiate(
+            obstaclePrefabs[ObjectIndex],                // Retrieves the prefab to instantiate
+            new Vector2(Random.Range(MinX, MaxX), YPos), // Sets the position to instantiate in 2D (Z is always 0)
+            Quaternion.identity);
     }
+
+    protected void addNewInstanceToPool()
+    {
+
+    }
+
     private void Awake()
     {
         if (instance != null && instance != this)

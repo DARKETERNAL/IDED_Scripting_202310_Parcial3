@@ -18,4 +18,10 @@ public class PoolableObject : MonoBehaviour, IPoolable
         throw new System.NotImplementedException();
     }
 
+
+    public void onDestroy(PoolableObject target, instanceCreator instanceCreator) {
+        instanceCreator.SendMessage("SpawnObject", target);
+    
+    }
+
 }

@@ -31,7 +31,7 @@ public class RefactoredObstacleSpawner : ObstacleSpawnerBase
         //obstaclePool = gameObject.AddComponent<obstacleLowPool>(); 
     }
 
-    protected override void SpawnObject()
+    protected override void SpawnObject(PoolableObject target)
     {
         Instantiate(
             obstaclePrefabs[ObjectIndex],                // Retrieves the prefab to instantiate

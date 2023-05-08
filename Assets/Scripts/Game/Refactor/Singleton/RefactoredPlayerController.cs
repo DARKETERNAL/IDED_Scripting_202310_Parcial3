@@ -1,7 +1,7 @@
 using UnityEngine;
 public class RefactoredPlayerController : PlayerControllerBase
 {
-    protected override bool NoSelectedBullet => throw new System.NotImplementedException();
+    protected override bool NoSelectedBullet => throw new System.NotImplementedException(); //bool?
     public static RefactoredPlayerController Instance { get; private set; }
     [SerializeField]
     private UIManager uiManager;
@@ -25,6 +25,11 @@ public class RefactoredPlayerController : PlayerControllerBase
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    private void Update()
+    {
+        
+    }
     private void OnDestroy()
     {
         if (Instance == this)
@@ -33,10 +38,42 @@ public class RefactoredPlayerController : PlayerControllerBase
         }
     }
 
-    protected override void SelectBullet(int index)
+    protected override void SelectBullet(int index)  //esto es lo que tengo que volver que use los pools
     {
         selectedBullet = bulletPrefabs[GameUtils.GetClampedValue(index, bulletPrefabs.Length)];
         uiManager.SendMessage("EnableIcon", index);
+    }
+
+    private void ProcessShooting() //tiene las entradas por teclado
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //Fire
+            if (NoSelectedBullet)
+            {
+                SelectBullet(0);
+            }
+
+            if (spawnPos != null)
+            {
+                Shoot();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SelectBullet(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SelectBullet(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SelectBullet(2);
+        }
     }
 
 }

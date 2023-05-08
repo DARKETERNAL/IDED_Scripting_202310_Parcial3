@@ -21,12 +21,13 @@ public class blueBullet : PoolBase<blueBullet>, IPoolable
 
     }
 
-    public void New()
+
+    public void PrepareForRetrieve()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Free()
+    public void PrepareForRecycle(Transform parent)
     {
         throw new System.NotImplementedException();
     }

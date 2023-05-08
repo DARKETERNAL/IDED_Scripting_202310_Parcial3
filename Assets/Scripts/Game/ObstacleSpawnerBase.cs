@@ -13,7 +13,7 @@ public abstract class ObstacleSpawnerBase : MonoBehaviour
     protected float MaxX { get; private set; }
     protected float YPos { get; private set; }
 
-    protected abstract void SpawnObject();
+    protected abstract void SpawnObject(PoolableObject target);
 
     protected void OnGameOver()
     {

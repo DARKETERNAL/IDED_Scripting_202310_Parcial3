@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class redBullet : PoolBase<redBullet>, IPoolable
 {
-    public void Free()
+    public void PrepareForRetrieve()
     {
         throw new System.NotImplementedException();
     }
 
-    public void New()
+    public void PrepareForRecycle(Transform parent)
     {
         throw new System.NotImplementedException();
     }
 
-    
+
     void Start()
     {
         

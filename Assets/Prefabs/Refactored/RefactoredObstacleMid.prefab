@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 628409427733347809}
   - component: {fileID: 628409427733347808}
   - component: {fileID: 7916128536159820398}
+  - component: {fileID: -5658793958722188680}
   m_Layer: 9
   m_Name: RefactoredObstacleMid
   m_TagString: Untagged
@@ -129,3 +130,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerToCollideWith: 7
   hp: 2
+--- !u!114 &-5658793958722188680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628409427733347814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766f9ff9763d1004180c90542a4434f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count: 0
+  basePrefab: {fileID: 0}
